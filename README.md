@@ -10,18 +10,28 @@
 - **Random Username Generation**: Generate random usernames to check availability.
 - **Duplicate Removal**: Automatically removes duplicate usernames from input files.
 - **Colored Output**: Get clear results with colored messages using `colorama`.
+- **Async Batch Mode**: Faster batch validation with concurrency control.
+- **Rate Limiting + Retries**: Smarter handling of API throttling and transient errors.
+- **Local Precheck**: Basic length/character filtering before API calls.
+- **Resume/Skip Checked**: Avoid re-checking usernames on reruns.
+- **Exports**: Save results to CSV and JSON.
+- **Discord Webhooks**: Send valid usernames or summaries to a webhook.
+- **Username Ideas Mode**: Wordlists, prefixes/suffixes, optional leetspeak.
+- **Proxy Support**: Optional HTTP(S) proxy for requests.
 
 ---
 
 ## ✅ Output:
 - **Valid Usernames**: Saved to `valid.txt`.
 - **Invalid Usernames**: Displayed in the console with specific error reasons.
+- **Checked Usernames**: Saved to `checked.txt` for resume/skip.
+- **Exports**: `results.csv` and `results.json` when enabled.
 
 ---
 
 ## 🚀 Requirements:
 - Python 3.x
-- Libraries: `requests`, `colorama`
+- Libraries: `requests`, `colorama`, `httpx`, `rich`
 
 ---
 
@@ -39,6 +49,17 @@
    ```bash
    python main.py
    ```
+
+---
+
+## Config
+The script reads `config.json` (auto-created on first run). Edit it to customize:
+- Batch concurrency, retries, delays, timeouts
+- Precheck rules and length limits
+- Output files and export paths
+- Discord webhook settings
+- Proxy settings
+- Ideas mode wordlist/prefix/suffix settings
 
 ---
 
